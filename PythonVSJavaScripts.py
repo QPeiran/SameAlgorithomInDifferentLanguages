@@ -15,7 +15,7 @@ for (var i =0; i <= thislist.length; i+=2)
 {console.log(thislist[i]+"");}
 
 
-Q2: REC_(k) = Sum(1:k)
+Q2: REC_(k) = Sum[1:k]
 Python:
 def tri_recursion(k):
   if(k>0):
