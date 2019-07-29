@@ -15,7 +15,7 @@ for (var i =0; i <= thislist.length; i+=2)
 {console.log(thislist[i]+"");}
 
 
-Q2: REC_(k) = Sum[1:k]
+Q2(1): REC_(k) = Sum[1:k]
 Python:
 def tri_recursion(k):
   if(k>0):
@@ -39,3 +39,43 @@ function rec(k)
 }
 
 rec(6);
+
+Q2(2): k!
+JS Loop:
+function factor(k) 
+{
+  var result = 1;
+  for ( k; k > 1; k--) 
+  {
+    result *= k;
+  }
+  return result;
+};
+console.log(factor(6));
+
+JS Recursion:  
+function factorial(k) 
+{
+  if (k <= 0) 
+  { 
+    return 1;
+  } 
+  else 
+  {
+    return (k * factorial(k - 1));
+  }
+};
+console.log(factorial(6));  
+
+python:
+  
+def factorial(k):
+  if k <= 0:
+    return 1
+  else:
+    return k*factorial(k-1)
+  
+print(factorial(6))
+    
+   
+    
