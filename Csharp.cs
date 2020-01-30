@@ -1,3 +1,4 @@
+
 using System;
 
 namespace MyApplication
@@ -26,6 +27,9 @@ namespace MyApplication
 	  int Sum = Point.Add(Point1);
 	  //Console.WriteLine(Point1.x);
 	  Console.WriteLine(Sum);
+	  Person P1 = new Person();
+		P1.FirstName = "P";
+		Console.WriteLine(P1.FirstName);
     }
   }
 	public class Point
@@ -40,6 +44,16 @@ namespace MyApplication
 			return (point.x + point.y);
 		}
 	}  
+	public class Person
+	{
+		public string FirstName
+		{
+			get => firstName;
+			set => firstName = (!string.IsNullOrWhiteSpace(value)) ? value : throw new ArgumentException("First name must not be blank");
+		}
+		private string firstName;
+		// remaining implementation removed from listing
+	}
 //	public class 3DPoint: Point
 //	{
 		
