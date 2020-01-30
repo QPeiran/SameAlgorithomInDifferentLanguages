@@ -27,7 +27,7 @@ namespace MyApplication
 	  //Console.WriteLine(Point1.x);
 	  Console.WriteLine(Sum);
 	  Person P1 = new Person();
-	  P1.NameSetting("P");
+	  P1.nameSetting("P");
 	  string pName = P1.nameGetting();
 	  Console.WriteLine(pName);	
     }
@@ -52,7 +52,7 @@ namespace MyApplication
 			set => firstName = (!string.IsNullOrWhiteSpace(value)) ? value : throw new ArgumentException("First name must not be blank");
 		}*/
 		private string _firstName;
-		public void NameSetting (string Name)
+		public void nameSetting (string Name)
 		{
 			_firstName = Name;
 		}
