@@ -28,8 +28,8 @@ namespace MyApplication
 	  //Console.WriteLine(Point1.x);
 	  Console.WriteLine(Sum);
 	  Person P1 = new Person();
-		P1.FirstName = "P";
-		Console.WriteLine(P1.FirstName);
+	  P1.FirstName = "P";
+	  Console.WriteLine(P1.FirstName);
     }
   }
 	public class Point
