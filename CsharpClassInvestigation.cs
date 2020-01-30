@@ -27,7 +27,7 @@ namespace MyApplication
 	  //Console.WriteLine(Point1.x);
 	  Console.WriteLine(Sum);
 	  Person P1 = new Person();
-	  P1.nameSetting("P");
+	  P1.nameSetting("");
 	  string pName = P1.nameGetting();
 	  Console.WriteLine(pName);	
     }
@@ -54,6 +54,7 @@ namespace MyApplication
 		private string _firstName;
 		public void nameSetting (string Name)
 		{
+			if (string.IsNullOrEmpty(Name)) {throw new Exception("the name is empty!");}
 			_firstName = Name;
 		}
 		public string nameGetting()
