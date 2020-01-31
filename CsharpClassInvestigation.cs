@@ -6,7 +6,7 @@ namespace MyApplication
   {
 	protected internal void MyMethod2()
     {
-      Console.WriteLine("Here's another execution! HaHa");
+      Console.WriteLine("Here's another execution! HaHa  \n ");
     }  
   }  
 	
@@ -21,27 +21,31 @@ namespace MyApplication
     {
       MyMethod();
 	  AnotherProgram methoding = new AnotherProgram();
-	  methoding.MyMethod2();
 	  Point Point1 = new Point(1,4);
 	  int Sum = Point.Add(Point1);
 	  //Console.WriteLine(Point1.x);
-	  Console.WriteLine(Sum);
+	  Console.WriteLine("Adding two points will be: {0} \n",Sum);
 	  Person P1 = new Person();
-	  P1.nameSetting("");
+	  P1.nameSetting("s1");
 	  string pName = P1.nameGetting();
-	  Console.WriteLine(pName);	
+	  Console.WriteLine("Student Name is : {0}\n", pName);	
+	  P1.MyMethod2();
     }
   }
 	public class Point
 	{
-		public int x, y;
+		private int X, Y;
 		public Point(int x, int y) 
 		{
-			this.x = x;
-			this.y = y;
+			X = x;
+			this.Y = y; // it's ok to with "this"
 		}
 		public static int Add(Point point){
-			return (point.x + point.y);
+			return (point.X + point.Y);
+		}
+		public static int showID(Person P) 
+		{
+			return P.ID;
 		}
 	}  
 	public class Person
@@ -51,17 +55,21 @@ namespace MyApplication
 			get => firstName;
 			set => firstName = (!string.IsNullOrWhiteSpace(value)) ? value : throw new ArgumentException("First name must not be blank");
 		}*/
-		private string _firstName;
+		public int ID = 100;
+		private string _firstName = "Default!";
 		public void nameSetting (string Name)
 		{
-			if (string.IsNullOrEmpty(Name)) {throw new Exception("the name is empty!");}
-			_firstName = Name;
+			if (string.IsNullOrEmpty(Name)) {throw new ArgumentException("the name is empty!");}
+			this._firstName = Name;
 		}
 		public string nameGetting()
 		{
 			return _firstName;
 		}
-		// remaining implementation removed from listing
+		public void MyMethod2()
+    	{
+      		Console.WriteLine("Here's another execution! HaHa  \n " + Point.showID(this));
+    	} 
 	}
 //	public class 3DPoint: Point
 //	{
