@@ -30,6 +30,8 @@ namespace MyApplication
 	  string pName = P1.nameGetting();
 	  Console.WriteLine("Student Name is : {0}\n", pName);	
 	  P1.MyMethod2();
+	  Point3D P2 = new Point3D(5,7,11);  
+	  Console.WriteLine("Adding three points will be: {0} \n", Point3D.Add(P2));
     }
   }
 	public class Point
@@ -47,7 +49,21 @@ namespace MyApplication
 		{
 			return P.ID;
 		}
-	}  
+	}
+	public class Point3D : Point
+	{
+		public int x,y,z;
+		public Point3D(int A, int B, int C) : 
+			base(A, B) 
+		{
+			this.x = A;
+			this.y = B;
+			this.z = C;
+		}
+		public static int Add(Point3D P){ //overridding
+			return (P.x + P.y + P.z);
+		}		
+	}	
 	public class Person
 	{
 		/*public string FirstName
@@ -71,8 +87,4 @@ namespace MyApplication
       		Console.WriteLine("Here's another execution! HaHa  \n " + Point.showID(this));
     	} 
 	}
-//	public class 3DPoint: Point
-//	{
-		
-//	}
 }
