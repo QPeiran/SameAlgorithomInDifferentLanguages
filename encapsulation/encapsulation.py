@@ -95,6 +95,25 @@ print(hello.get_value()) # 100
 hello.fun()
 #hello.__fun() # broken
 hello.Help()
+
+class derived(Hello):
+    def __init__(self,name):
+        #super().__init__(self,name)
+        Hello.__init__(self,name)
+        
+    def call_public(self):
+        print("now in derived class: ")
+        self.fun()
+        
+    def call_private(self):
+        print("now in derived class: ")
+        self.__fun()
+        
+        
+derived_hello = derived("new")        
+derived_hello.call_public() #
+#derived_hello.call_private()# broken
+derived_hello.Help()
       
 ########## protected ###############
 '''
