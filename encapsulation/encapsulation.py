@@ -1,5 +1,4 @@
 ########## overview play ground ################
-
 '''
 
                             Online Python Compiler.
@@ -77,6 +76,8 @@ class Hello:
         print("Public method")
     def __fun(self):
         print("Private method")
+    def Help(self):
+        self.__fun()
         
 hello = Hello("World")
 hello.a = 25
@@ -93,9 +94,10 @@ print(hello.get_value()) # 100
 
 hello.fun()
 #hello.__fun() # broken
+hello.Help()
       
 ########## protected ###############
-
+'''
 
 
 class Base: 
@@ -127,3 +129,4 @@ obj2 = Derived()
 
 
 ############ private ##########
+'''
