@@ -1,15 +1,30 @@
-########## overview ################
+########## overview play ground ################
 
 class Hello:
     def __init__(self, name):
         self.a = 10
         self._b = 20
         self.__c = 30
-
+    def set_value(self, value):
+        #self.a = value
+        #self._b = value
+        self.__c = value
+    def get_value(self):
+        #return self.a
+        #return self._b
+        return self.__c
 hello = Hello("World")
-print(hello.a)
-print(hello._b)
-print(hello.__c)
+hello.a = 25
+print(hello.a) # 25
+hello._b = 50
+print(hello._b) # 50
+
+#print(hello.__c) #broken
+
+print(hello.get_value()) # 30
+
+hello.set_value(100)
+print(hello.get_value()) # 100
       
 ########## protected ###############
 
